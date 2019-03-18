@@ -17,15 +17,21 @@ JustGage = function(config) {
 
   var node;
 
-  if (config.id !== null && config.id !== undefined) {
+  if (config.parentNode !== null && config.parentNode !== undefined) 
+  {
+    node = config.parentNode;
+  } 
+  else
+  if (config.id !== null && config.id !== undefined) 
+  {
     node = document.getElementById(config.id);
     if (!node) {
       console.log('* justgage: No element with id : %s found', config.id);
       return false;
     }
-  } else if (config.parentNode !== null && config.parentNode !== undefined) {
-    node = config.parentNode;
-  } else {
+  } 
+  else 
+  {
     console.log('* justgage: Make sure to pass the existing element id or parentNode to the constructor.');
     return false;
   }
