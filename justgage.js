@@ -44,6 +44,8 @@ JustGage = function(config) {
     // id : string
     // this is container element id
     id: config.id,
+	
+	classId: config.classId,
 
     // value : float
     // value gauge is showing
@@ -944,7 +946,7 @@ JustGage.prototype.refresh = function(val, max) {
 JustGage.prototype.generateShadow = function(svg, defs) {
 
   var obj = this;
-  var sid = "inner-shadow-" + obj.config.id;
+  var sid = "inner-shadow-" + obj.config.classId || obj.config.id;
   var gaussFilter, feOffset, feGaussianBlur, feComposite1, feFlood, feComposite2, feComposite3;
 
   // FILTER
